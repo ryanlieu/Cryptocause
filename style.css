@@ -1,0 +1,21 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  display: table;
+  margin: auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size:4.75em;
+  !important
+}
+
+p {
+
+}
