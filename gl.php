@@ -8,7 +8,7 @@ require_once 'credentials.class.php';
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
         <title>Charity Mine</title>
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="style.css">
       <script>
          var g_user = '<?php echo $username ?>';
@@ -26,26 +26,20 @@ require_once 'credentials.class.php';
 
     <BODY>
         <h1>CHARITY MINE</h1>
-        <h2>$352 RAISED THIS MONTH</h2>
-        <p>Charity Mine lets you collectively mine bitcoins with others for a good cause.<br>Just hit Get Mining! And you'll be raising bitcoins for a good cause instantly.</p>
-        <h3>No installation. Efficient mining. Collaborative charity.</h3>
+        <p>Charity Mine lets you collectively mine bitcoins with <br> others for a good cause. Just hit the START MINING <br> button and you'll be raising bitcoins for good.</p>
+        <div id="divider"></div>
+        <h5>No installation. Efficient mining. <br> Collaborative charity.</h5>
         <div id="control">
-    		<br />Mine Method:
-    		<input type="radio" name="method" value="js" checked="checked"> Javascript
-    		<input type="radio" name="method" value="jsworker"> WebWorker
-    		<input type="radio" name="method" value="webgl"> WebGL
-    		<br />WebGL Threads: <INPUT id="threads" value="1024"/>
-    		<br /><input type="checkbox" id="testmode"> Testmode (Nonce will be found after ~18 khashes)
-    		<br><br><button id="start" onclick="begin_mining(); document.getElementById('start').style.display = 'none';">Get Mining!</button>
+    		<input type="radio" name="method" value="js" class="hidden"></input>
+    		<input type="radio" name="method" value="jsworker" class="hidden"> </input>
+    		<input type="radio" name="method" value="webgl" checked="checked" class="hidden"> </input>
+        <input id="threads" value="1024" class="hidden"/>
+    		<input type="checkbox" id="testmode" checked="checked" class="hidden">
+    		<br><br><button id="start" onclick="begin_mining(); document.getElementById('start').style.display = 'none';">START<br> MINING</button>
         </div>
-		<br />
-        <br />pool: <?php echo $url ?>:<?php echo $port ?>
 		<br />Total Hashes: <INPUT id="total-hashes" />
 		<br />Hash/s: <INPUT id="hashes-per-second" />
-		<br />Target/Difficulty: <INPUT id="target" />
-		<br />Golden Ticket: <INPUT id="golden-ticket" />
 		<BR/>
-		<br />Info: <textarea id="info" style="width: 400px; height: 300px;"></textarea>
 		<BR/>
      </BODY>
 
