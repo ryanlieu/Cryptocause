@@ -137,8 +137,8 @@ function readScript(n) {
 };
 
 function onl() {
-    vShaderQuellcode = readScript('shader-vs.js');
-    fShaderQuellcode = readScript('shader-fs.js');
+    vShaderQuellcode = readScript('js/shader-vs.js');
+    fShaderQuellcode = readScript('js/shader-fs.js');
 };
 
 function glminer(job, callback) {

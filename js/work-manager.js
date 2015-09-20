@@ -78,12 +78,12 @@ function onSuccess(jsonresp) {
         }
         worker = { postMessage : function(m) { worker.intMessage( { data: m} ); },
                    intMessage: function() {} };
-        var m = readScript('miner.js');
+        var m = readScript('js/miner.js');
         var s = '(function() {' + m + ';\n' + 'onmessage({ data: job });' + ' worker.intMessage = onmessage; })';
         var run = eval(s);
         run();
     } else {
-        worker = new Worker("miner.js");
+        worker = new Worker("js/miner.js");
         worker.onmessage = onWorkerMessage;
         worker.onerror = onWorkerError;
         worker.postMessage(job);
@@ -93,6 +93,8 @@ function onSuccess(jsonresp) {
 }
 
 function begin_mining() {
+    $("#start").fadeOut(400);
+    $(".caption").animate({opacity: 1}, 2000);
     var tm = $('#testmode');
     testmode = tm.length > 0 && tm[0].checked;
     start = (new Date()).getTime();
