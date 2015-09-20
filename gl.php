@@ -26,21 +26,24 @@ require_once 'credentials.class.php';
 
     <BODY>
         <h1>CHARITY MINE</h1>
-        <p>Charity Mine lets you collectively mine bitcoins with <br> others for a good cause. Just hit the START MINING <br> button and you'll be raising bitcoins for good.</p>
-        <div id="divider"></div>
-        <h5>No installation. Efficient mining. <br> Collaborative charity.</h5>
-        <div id="control">
-    		<input type="radio" name="method" value="js" class="hidden"></input>
-    		<input type="radio" name="method" value="jsworker" class="hidden"> </input>
-    		<input type="radio" name="method" value="webgl" checked="checked" class="hidden"> </input>
-        <input id="threads" value="1024" class="hidden"/>
-    		<input type="checkbox" id="testmode" checked="checked" class="hidden">
-    		<br><br><button id="start" onclick="begin_mining(); document.getElementById('start').style.display = 'none';">START<br> MINING</button>
-        </div>
-		<br />Total Hashes: <INPUT id="total-hashes" />
-		<br />Hash/s: <INPUT id="hashes-per-second" />
-		<BR/>
-		<BR/>
+        <section>
+          <p>Charity Mine lets you collectively mine bitcoins with <br> others for a good cause. Just hit the START MINING <br> button and you'll be raising bitcoins for good.</p>
+          <div id="divider"></div>
+          <h5>No installation. Efficient mining. <br> Collaborative charity.</h5>
+      		<input type="radio" name="method" value="js" class="hidden"></input>
+      		<input type="radio" name="method" value="jsworker" class="hidden"> </input>
+      		<input type="radio" name="method" value="webgl" checked="checked" class="hidden"> </input>
+          <input id="threads" value="1024" class="hidden"/>
+      		<input type="checkbox" id="testmode" checked="checked" class="hidden">
+          <div id="numandStart">
+        		<button id="start" onclick="begin_mining();">START<br>MINING</button>
+            <div id="userCount">10</div>
+          </div>
+          <div id="statusBar"><div id="progress"></div></div>
+  		    <input id="total-hashes" />
+  	      <input id="hashes-per-second" />
+    </section>
+
      </BODY>
 
 </html>

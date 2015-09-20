@@ -1,21 +1,109 @@
 html, body {
     height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    margin:0px;
+    padding:0px;
 }
 
-html {
-    display: table;
-    margin: auto;
-    font-family: 'Open Sans', sans-serif;
+
+.hidden {
+  display:none;
 }
 
 h1 {
-  display: table;
-  margin: auto;
+  display:block;
+  text-align:center;
   font-family: 'Montserrat', sans-serif;
   font-size:4.75em;
-  !important
+  color:#FFFFFF;
+  background-color: #2ecc71;
+  margin:0px;
+  padding:10px;
+}
+
+#divider {
+  margin:auto;
+  height:2px;
+  width:100px;
+  background-color: #2ecc71;
 }
 
 p {
+  padding-top:30px;
+  margin:0px;
+  padding-bottom:30px;
+  font-size:1.5em;
+  text-align:center;
+}
 
+h5 {
+  padding:0px;
+  margin:0px;
+  padding-top:30px;
+  text-align:center;
+  font-size:2em;
+  font-style:italic;
+  color:#575757;
+  padding-bottom:50px;
+}
+
+#numandStart{
+  width:500px;
+  margin:0 auto;
+}
+
+#start{
+  margin-top:50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1em;
+  font-weight:700;
+  padding: 1.25rem 2.5rem;
+  background-color: #2ecc71;
+  border: 1px solid transparent;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-right:20px;
+}
+
+#userCount{
+  font-family: 'Montserrat', sans-serif;
+  font-weight:700;
+  font-size: 4.0rem;
+  background-color: #ecf0f1;
+  border: 1px solid transparent;
+  color: #575757;
+  -webkit-border-radius: 3px;
+  width:154px;
+  height:154px;
+  text-align:center;
+}
+
+
+#start:hover {
+  background-color: #fff;
+  color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+#statusBar {
+  background-color: #ecf0f1;
+  border: 1px solid transparent;
+  color: #575757;
+  -webkit-border-radius: 3px;
+  width:502px;
+  height:80px;
+  margin:auto;
+}
+
+#progress {
+  border: 1px solid transparent;
+  -webkit-border-radius: 3px;
+  width:202px;
+  height:79px;
+  background-color:#2ecc71;
 }
