@@ -4,6 +4,6 @@ Cryptocause is a website that allows you to use your web browser to mine Bitcoin
 
 A Node backend serves up live stats piped by WebSockets and automates the transfer of funds to known BTC addresses of charities using Coinbase API's. A PHP backend handles the hashing work of clients, using RPC to send the work over HTTP (which should really be Stratum in the future).
 
-## Hosting Cryptocuase
+## Hosting Cryptocause
 
 To run Cryptocause, spin up both the PHP (`php -S localhost`) and the Node (`node app.js`) and navigate to index.php. 
