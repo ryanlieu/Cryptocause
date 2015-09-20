@@ -160,3 +160,8 @@ h5 {
   text-align: center;
 }
 
+#hashed {
+  background-color: black;
+  color: white;
+  padding: 5px 5px 5px 5px;
+}

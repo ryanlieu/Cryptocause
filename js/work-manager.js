@@ -97,7 +97,12 @@ function begin_mining() {
     $("#hero").html("Thank you for contributing! We recommend using Cryptocause while you are plugged into power.");
     $(".stats").animate({opacity: 1}, 2000);
 
-    var socket = io('http://173.230.145.30:8080');
+    var socket = io('http://localhost:8080');
+
+    socket.emit('update', JSON.stringify({
+        "hashrate": $('#hashes-per-second').val(),
+        "id": id
+    }));
 
     var graphData, graph;
     var totalHashrate, id;
@@ -106,17 +111,21 @@ function begin_mining() {
         console.log(data);
         totalUsers = JSON.parse(data).connected;
         $("#hash").html(totalUsers + " users connected and hashing");
-        
-        
-    
     });
 
+    socket.on('totalhash', function(data) {
+        console.log(data);
+        totalHashrate = JSON.parse(data).hashrate;
+    });
+
+    /*
     socket.on('update', function(data) {
         var output = JSON.parse(data);
         if(output.id != id) {
             totalHashrate += output.hashrate;
         }
     });
+*/
 
     var graphData = [{label: id, values: []}];
         var graph = $('#graph').epoch({
@@ -127,6 +136,9 @@ function begin_mining() {
     var meter = $('#meter').epoch({ type: 'time.gauge', value: ret_percentage() });
 
     setInterval(function() {
+        socket.emit('update', JSON.stringify({
+            "hashrate": $('#hashes-per-second').val()
+        }));
         meter.update(ret_percentage());
         
         graph.push([{
@@ -158,7 +170,7 @@ function begin_mining() {
 }
 
 function ret_percentage() {
-    return $("#hashes-per-second").val() / /*(totalHashrate + $("#hashes-per-second").val())*/200000;
+    return $("#hashes-per-second").val() / 200000;
 }
 
 function ret_next() {
@@ -204,6 +216,9 @@ function get_work() {
 
 function onWorkerMessage(event) {
     var job = event.data;
+    if(job.hashed) {
+        $("#hashed").html(job.hashed);
+    }
 
     if(job.print) console.log('worker:' + job.print);
 

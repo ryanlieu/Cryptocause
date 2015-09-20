@@ -5,7 +5,8 @@ var app = require('http').createServer(handleIncoming);
 var io = require('socket.io')(app);
 
 var connected = 0;
-var hashrate = 0;
+var totalHashrate = 0;
+var updates = [];
 
 io.on('connection', function(socket) {
   connected++;
@@ -16,18 +17,31 @@ io.on('connection', function(socket) {
 
   socket.on('update', function(payload) {
     var hashrate = JSON.parse(payload).hashrate;
-    var pos = JSON.parse(payload).pos;
-    var id = JSON.parse(payload).id;
+    //var id = JSON.parse(payload).id;
 
-    io.emit('update', JSON.stringify({
-      id: id,
-      hashrate: hashrate,
-      pos: pos
-    }));
+    updates.push(hashrate);
+    if(connected === 1) {
+      io.emit('totalhash', JSON.stringify({
+        hashrate: 200000
+      }));
+      updates = [];
+    }
+
+    if(updates.length === connected) {
+      io.emit('totalhash', JSON.stringify({
+        hashrate: totalHashrate
+      }));
+      updates = [];
+    } else {
+      totalHashrate += hashrate;
+    }
   })
 
   socket.on('disconnect', function() {
     if(connected > 0) connected--;
+    io.emit('newclient', JSON.stringify({
+      connected: connected
+    }));
   })
 });
 

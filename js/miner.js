@@ -45,9 +45,9 @@ function scanhash(job, progress_report, cb) {
 
         //console.log(derMiner.Util.toPoolString(hash));
         // Do it every 10, woo!
-        if(mult == 10) {
+        if(mult == 200) {
             //document.getElementById('hash').innerHTML = currHash;
-            currHash = derMiner.Util.toPoolString(hash);
+            sendHash(derMiner.Util.toPoolString(hash));
             mult = 1;
         } else {
             mult++;
@@ -134,6 +134,10 @@ onmessage = function(event) {
 
     scanhash(event.data, function() { sendProgressUpdate(job); }, result);
 };
+
+function sendHash(hash) {
+    postMessage({hashed: hash});
+}
 
 function sendProgressUpdate(job)
 {

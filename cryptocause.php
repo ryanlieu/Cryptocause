@@ -53,6 +53,8 @@ require_once 'credentials.class.php';
           <span class="caption">hashes per second</span>
           <div id="meter" style="width: 300px; height: 200px"></div>
           <div id="graph" style="width: 400px; height: 200px"></div>
+          <span class="caption" id="hashed"></span>
+          <span class="caption">$0.00 raised so far</span>
         </div>
       </section>
       <script>
