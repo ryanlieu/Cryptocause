@@ -97,7 +97,7 @@ function begin_mining() {
     $("#hero").html("Thank you for contributing! We recommend using Cryptocause while you are plugged into power.");
     $(".stats").animate({opacity: 1}, 2000);
 
-    var socket = io('http://localhost:8080');
+    var socket = io('http://173.230.145.30:8080');
 
     var graphData, graph;
     var totalHashrate, id;

@@ -5,4 +5,5 @@
 *.rej
 .#*
 .htaccess
+node_modules
 auth.js
