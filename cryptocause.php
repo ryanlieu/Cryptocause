@@ -30,10 +30,13 @@ require_once 'credentials.class.php';
 
     </head>
     <body>
-      <h1>Cryptocause</h1>
+      <div class="logo">
+        <img src="fulllogo.png">
+      </div>
       <section>
         <p id="head"></p>
         <h5 id="hero">Cryptocause is a distributed computing project to use your extra CPU cycles for good. Just hit the START MINING button and you'll be raising bitcoins for good, right in the browser.</h5>
+        <h4 class="charity">This month's charity is <a href="http://www.redcross.org/">Red Cross</a></h4>
         <div id="divider"></div>
         <span id="hash"></span>
         <input type="radio" name="method" value="js" class="hidden">
@@ -53,8 +56,8 @@ require_once 'credentials.class.php';
           <span class="caption">hashes per second</span>
           <div id="meter" style="width: 300px; height: 200px"></div>
           <div id="graph" style="width: 400px; height: 200px"></div>
-          <span class="caption" id="hashed"></span>
-          <span class="caption">$0.00 raised so far</span>
+          <div class="caption" id="hashed" ></div>
+          <div class="caption" id="raisedSoFar">$0.00 raised so far</div>
         </div>
       </section>
       <script>

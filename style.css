@@ -5,12 +5,20 @@ html, body {
     padding:0px;
 }
 
+.charity {
+  text-align: center;
+  font-size: 1.75em;
+  line-height: 2em;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 20px;
+}
 
 .hidden {
   display:none;
 }
 
-h1 {
+.logo {
   display:block;
   text-align:center;
   font-family: 'Montserrat', sans-serif;
@@ -40,7 +48,7 @@ h1 {
 p {
   padding-top:30px;
   margin:0px;
-  padding-bottom:30px;
+  /*padding-bottom:30px;*/
   font-size:1.5em;
   text-align:center;
 }
@@ -63,6 +71,7 @@ h5 {
 #numandStart{
   width:500px;
   margin:0 auto;
+  padding-top: 30px;
 }
 
 #start{
@@ -160,8 +169,19 @@ h5 {
   text-align: center;
 }
 
+a {
+  color: #2ecc71;
+}
+
+a:hover {
+  color: #27ae60;
+}
+
 #hashed {
-  background-color: black;
-  color: white;
-  padding: 5px 5px 5px 5px;
+  text-align: center;
+  line-height: 2.5em;
+}
+
+#raisedSoFar {
+  line-height: 2em;
 }
