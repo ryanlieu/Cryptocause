@@ -1,21 +1,9 @@
-# hamiyoca - Hash me if you can
+# Cryptocause
 
-## Getting Started
+Cryptocause is a website that allows you to use your web browser to mine Bitcoin for charitable causes. The application is JavaScript-based (GL shader components are forked from [hamiyoca](https://github.com/derjanb/hamiyoca) and JSON-RPC PHP library by Sergio Vaccaro) and the pool used is `getblocktemplate`-based by [Eligius](http://eligius.st). 
 
-Just clone the repo, `cd` into it and use PHP's internal server.
+A Node backend serves up live stats piped by WebSockets and automates the transfer of funds to known BTC addresses of charities using Coinbase API's. A PHP backend handles the hashing work of clients, using RPC to send the work over HTTP (which should really be Stratum in the future).
 
-`php -S localhost:8000`
+## Hosting Cryptocuase
 
-Then open the demo at 'http://localhost:8000'
-
-##  Development
-Look inside of `credentials.class.php`, adjust those variables for your local instance of bitcoind.
-
-## API
-
-```JavaScript
-
-begin_mining()
-
-
-```
+To run Cryptocause, spin up both the PHP (`php -S localhost`) and the Node (`node app.js`) and navigate to index.php. 
