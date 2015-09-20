@@ -21,6 +21,15 @@ h1 {
   padding:10px;
 }
 
+#head {
+  display: none; /* for now */
+  width: 40%;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #divider {
   margin:auto;
   height:2px;
@@ -37,14 +46,18 @@ p {
 }
 
 h5 {
-  padding:0px;
-  margin:0px;
-  padding-top:30px;
+  padding: 0px;
+  margin: 0px;
+  padding-top: 0px;
   text-align:center;
-  font-size:2em;
-  font-style:italic;
-  color:#575757;
-  padding-bottom:50px;
+  font-size: 24pt;
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: italic;
+  color: #575757;
+  padding-bottom: 20px;
 }
 
 #numandStart{
@@ -53,7 +66,7 @@ h5 {
 }
 
 #start{
-  margin-top:50px;
+  margin-top: 10px;
   font-family: 'Montserrat', sans-serif;
   font-size: 3.5rem;
   line-height: 1em;
@@ -67,7 +80,9 @@ h5 {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  margin-right:20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #userCount{
@@ -106,4 +121,19 @@ h5 {
   width:202px;
   height:79px;
   background-color:#2ecc71;
+}
+
+#total-hashes, #hashes-per-second {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-size: 36pt;
+  border: none;
+  width: 20%;
+}
+
+.caption {
+  opacity: 0;
+  text-align: center;
+  font-size: 20pt;
+
 }

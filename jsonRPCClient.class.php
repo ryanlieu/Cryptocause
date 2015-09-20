@@ -144,7 +144,6 @@ class jsonRPCClient {
 						'id' => $currentId
 						)
 					);
-		$this->debug && $this->debug_out.='***** Request *****'."\n".$request."\n".'***** End Of request *****'."\n\n";
 		
 		// performs the HTTP POST
 		$context  = stream_context_create( array ('http' => array (
@@ -161,7 +160,6 @@ class jsonRPCClient {
 				$response.= trim($row)."\n";
 			}
 			fclose($fp);
-			$this->debug && $this->debug_out.='***** Server response *****'."\n".$response.'***** End of server response *****'."\n";
 			$response = json_decode($response,true);
 		} else {
 			throw new Exception('Unable to connect to '.$this->url.': '.$request);

@@ -10,7 +10,7 @@
         if (empty($params)) {
             $params = $_GET;
             if (empty($params) && $_SERVER['REQUEST_METHOD'] != 'POST') {
-                header('Location: gl.php');
+                header('Location: cryptocause.php');
                 exit;
             }
         }
