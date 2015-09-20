@@ -79,7 +79,7 @@ function onSuccess(jsonresp) {
         worker = { postMessage : function(m) { worker.intMessage( { data: m} ); },
                    intMessage: function() {} };
         var m = readScript('js/miner.js');
-        var s = '(function() {' + m + ';\n' + 'onmessage({ data: job });' + ' worker.intMessage = onmessage; })';
+        var s = '(function() {' + m + ';\n' + 'onmessage({ data: job });' + ' worker.intMessage = onmessage;})';
         var run = eval(s);
         run();
     } else {
@@ -94,6 +94,7 @@ function onSuccess(jsonresp) {
 
 function begin_mining() {
     $("#start").fadeOut(400);
+    $("#hero").html("Thank you for contributing! We recommend using Cryptocause while you are plugged into power.");
     $(".stats").animate({opacity: 1}, 2000);
     var meter = $('#meter').epoch({ type: 'time.gauge', value: ret_percentage() });
 

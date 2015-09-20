@@ -16,6 +16,8 @@ var reportPeriod = 1000;
 var maxNonce = 0xFFFFFFFF;
 var maxCnt = 5;
 var run = true;
+var currHash = "";
+var mult = 1;
 
 function scanhash(job, progress_report, cb) {
     var midstate = job.midstate;
@@ -41,7 +43,17 @@ function scanhash(job, progress_report, cb) {
 
         var hash = sha256.update(h2).state;
 
-        // console.log(derMiner.Util.toPoolString(hash));
+        //console.log(derMiner.Util.toPoolString(hash));
+        // Do it every 10, woo!
+        if(mult == 10) {
+            //document.getElementById('hash').innerHTML = currHash;
+            currHash = derMiner.Util.toPoolString(hash);
+            mult = 1;
+        } else {
+            mult++;
+        }
+
+
         if (is_golden_hash(hash, target)) {
             job.nonce = nonce;
 
@@ -82,6 +94,10 @@ function scanhash(job, progress_report, cb) {
     }
 
     return;
+}
+
+function ret_hash() {
+    return currHash;
 }
 
 function is_golden_hash(hash, target)

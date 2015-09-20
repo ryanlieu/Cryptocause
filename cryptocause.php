@@ -32,8 +32,9 @@ require_once 'credentials.class.php';
       <h1>Cryptocause</h1>
       <section>
         <p id="head"></p>
-        <h5>Cryptocause is a distributed computing project to use your extra CPU cycles for good. Just hit the START MINING button and you'll be raising bitcoins for good, right in the browser.</h5>
+        <h5 id="hero">Cryptocause is a distributed computing project to use your extra CPU cycles for good. Just hit the START MINING button and you'll be raising bitcoins for good, right in the browser.</h5>
         <div id="divider"></div>
+        <span id="hash"></span>
         <input type="radio" name="method" value="js" class="hidden"></input>
         <input type="radio" name="method" value="jsworker" class="checked" class="hidden"> </input>
         <input type="radio" name="method" value="webgl" class="hidden"> </input>
