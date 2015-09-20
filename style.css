@@ -151,3 +151,12 @@ h5 {
   margin-left: 20%;
 }
 
+#hash {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20pt;
+  width: 20%;
+  text-align: center;
+}
+

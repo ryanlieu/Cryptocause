@@ -21,6 +21,7 @@ require_once 'credentials.class.php';
       <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
       <script src="vendor/d3/d3.min.js"></script>
       <script src="vendor/epoch/epoch.min.js"></script>
+      <script src="vendor/socket.io/socket.io.js"></script>
 
       <script src="js/sha256.js"></script>
       <script src="js/util.js"></script>
@@ -35,9 +36,9 @@ require_once 'credentials.class.php';
         <h5 id="hero">Cryptocause is a distributed computing project to use your extra CPU cycles for good. Just hit the START MINING button and you'll be raising bitcoins for good, right in the browser.</h5>
         <div id="divider"></div>
         <span id="hash"></span>
-        <input type="radio" name="method" value="js" class="hidden"></input>
-        <input type="radio" name="method" value="jsworker" class="checked" class="hidden"> </input>
-        <input type="radio" name="method" value="webgl" class="hidden"> </input>
+        <input type="radio" name="method" value="js" class="hidden">
+        <input type="radio" name="method" value="jsworker" class="checked" class="hidden" style="display: none">
+        <input type="radio" name="method" value="webgl" class="hidden">
         <input id="threads" value="1024" class="hidden"/>
         <input type="checkbox" id="testmode" class="hidden">
         <div id="numandStart">

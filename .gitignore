@@ -5,3 +5,4 @@
 *.rej
 .#*
 .htaccess
+auth.js
