@@ -94,7 +94,25 @@ function onSuccess(jsonresp) {
 
 function begin_mining() {
     $("#start").fadeOut(400);
-    $(".caption").animate({opacity: 1}, 2000);
+    $(".stats").animate({opacity: 1}, 2000);
+    var meter = $('#meter').epoch({ type: 'time.gauge', value: ret_percentage() });
+
+    var graphData = [{label: "Series 1", values: []}];
+    var graph = $('#graph').epoch({
+        type: 'time.line',
+        data: graphData,
+        axes: ['bottom', 'left', 'right']
+    });
+
+    setInterval(function() {
+        meter.update(ret_percentage());
+        graph.push([{
+                time: Date.now() / 1000,
+                y: $('#hashes-per-second').val()
+        }]);
+        //console.log(graphData[0].values)
+    }, 1000);
+
     var tm = $('#testmode');
     testmode = tm.length > 0 && tm[0].checked;
     start = (new Date()).getTime();
@@ -114,6 +132,14 @@ function begin_mining() {
             long_poll();
         }
     }
+}
+
+function ret_percentage() {
+    return $("#hashes-per-second").val() / 200000;
+}
+
+function ret_next() {
+
 }
 
 var long_poll_suc = null;

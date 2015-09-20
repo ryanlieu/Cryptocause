@@ -132,8 +132,22 @@ h5 {
 }
 
 .caption {
-  opacity: 0;
   text-align: center;
   font-size: 20pt;
-
 }
+
+.stats {
+  width: 80%;
+  opacity: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#graph, #meter {
+  float: left;
+}
+
+#graph {
+  margin-left: 20%;
+}
+

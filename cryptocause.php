@@ -10,6 +10,7 @@ require_once 'credentials.class.php';
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="vendor/epoch/epoch.min.css">
       <script>
          var g_user = '<?php echo $username ?>';
          var g_password = '<?php echo $password ?>';
@@ -18,10 +19,14 @@ require_once 'credentials.class.php';
       </script>
 
       <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="vendor/d3/d3.min.js"></script>
+      <script src="vendor/epoch/epoch.min.js"></script>
+
       <script src="js/sha256.js"></script>
       <script src="js/util.js"></script>
       <script src="js/work-manager.js"></script>
       <script src="js/glminer.js"></script>
+
     </head>
     <body>
       <h1>Cryptocause</h1>
@@ -39,10 +44,17 @@ require_once 'credentials.class.php';
           <!--<div id="userCount">10</div>-->
         </div>
         <!--<div id="statusBar"><div id="progress"></div></div>-->
-        <input id="total-hashes" />
-        <span class="caption">hashes completed</span>
-        <input id="hashes-per-second" />
-        <span class="caption">hashes per second</span>
+        <div class="stats">
+          <input id="total-hashes" />
+          <span class="caption">hashes completed</span>
+          <input id="hashes-per-second" />
+          <span class="caption">hashes per second</span>
+          <div id="meter" style="width: 300px; height: 200px"></div>
+          <div id="graph" style="width: 400px; height: 200px"></div>
+        </div>
       </section>
+      <script>
+
+      </script>
      </body>
 </html>
